@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title >Old Car Price Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <style>
+  body {
+    font: 21px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #18232E;
+  }
+  p {font-size: 19px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    /*background-color:rgb(94, 212, 206); /* Green */
+    background-image: url('/static/tcar.jpg');
+    /*background-size: auto;*/
+    background-size: 2032px 920px;
+    /*color: rgb(74, 142, 197);*/
+    color: #000000;
+    text-align: center;
+
+  }
+  .bg-2 { 
+    background-color: #4475df; /* Dark Blue */
+    color: #808000;
+  }
+  .bg-3 { 
+    background-color: #e49d9d; /* White */
+    color: #65b8a6;
+  }
+  .bg-4 { 
+    background-color: #000000; /* Black */
+    color: rgb(167, 110, 110);
+  }
+  .container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  h1 {
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default bg-4">
+  <div class="container">
+    <div class="navbar-header">
+      
+      <h1 style="color:white;"><b>Old Car Price Prediction</b></h1>
+    </div>
+    
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <div class="row">
+    <div class="col-md-2"></div>
+          <h4 style="color:white;;font-size:22px;"><b>Project : Integreated Machine Learning into Web Application with FLASK</b></h4>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+  <form action="{{ url_for('predict')}}"method="post">
+    <div class="form-group">
+      <label for="age_of_car">Car Age</label>
+      <input type="text" class="form-control" name="age_of_car" id="age_of_car" placeholder="Enter the age of car Ex: 1 " required="required">
+    </div>
+    <div class="form-group">
+      <label for="transmission">Transmission</label>
+      <select input type="text" class="form-control"  name="transmission" id="transmission" placeholder="Enter the type of transmission car Ex: Manual" required="required" required>
+        <option value=0>Automatic</option>
+        <option value=1>Manual</option>
+        <option value=2>SemiAuto</option>
+      </select>
+          
+    </div>
+    <div class="form-group">
+      <label for="mileage"> Miles runned</label>
+      <input type="text" class="form-control" name="mileage" id="mileage" placeholder="Enter the Total miles travelled or covered Ex: 4562" required="required">
+    </div>
+    <div class="form-group">
+      <label for="fuelType">FuelType</label>
+      <select input type="text" class="form-control" name="fuelType" id="fuelType" placeholder="Enter the fuelType of car Ex: Petrol " required="required" required>
+        <option value=0>Diesel</option>
+        <option value=1>Petrol</option>
+        <option value=2>Hybrid</option>
+        <option value=3>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="tax">Car Tax</label>
+      <input type="text" class="form-control" name="tax" id="tax" placeholder="Enter the Tax to be paid for the car Ex: 145" required="required">
+    </div>
+    <div class="form-group">
+      <label for="mpg" style="color:white">Car Mileage</label>
+      <input type="text" class="form-control" name="mpg" id="mpg" placeholder="Enter the mileage of the car Ex: 49.6 " required="required">
+    </div>
+    <div class="form-group">
+      <label for="engineSize" style="color:white">Engine size</label>
+      <input type="text" class="form-control" name="engineSize" id="engineSize" placeholder="Enter the Size of the Enginer Ex: 2.0 " required="required">   
+    </div>
+    
+    
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    <button type="submit" class="btn btn-primary btn-block btn-large" style="color:black;
+;font-size:22px;"><b>Predict Price</b></button>
+  </form>
+
+</div>
+<div class="col-md-4"></div>
+</div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p  style="font-size:22px;">Thanks to <a href="https://dbatu.ac.in/">DBATU</a></p>
+  <p class='footer-description'  style="font-size:22px;">Made ❤️ with Ganesh Devare & his Team.</p>
+  <div class="contact" >
+    <a target="_blank" href="https://github.com/ganeshdevare67"><i class="fab fa-github fa-lg contact-icon" style="color:blanchedalmond !important"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/ganesh-devare-5aa310161/"><i class="fab fa-linkedin fa-lg contact-icon" style="color:blanchedalmond !important"></i></a>
+</div>
+   
+  
+</footer>
+
+</body>
+</html>
